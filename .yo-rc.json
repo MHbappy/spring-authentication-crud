@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.employee.info"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "monolith",
+    "baseName": "reactjsJavaCrud",
+    "packageName": "com.employee.info",
+    "packageFolder": "com/employee/info",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NGU3ZjdjMTNmYjVmNTU0YTI2MGFlYTdkY2M4YmJmYzJkMGFlNmIwNDliNzhlZGRiZDllNGIyNjBmMWQyMzhmNGZmMjk1MDk1YmFmYzBmY2I1OTdkZDMxZTBhMWZiOGM5ODQ4Y2MzZWE4M2I0Nzc3MzM3NWM5NDQ2NzdmYmY5Njk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "creationTimestamp": 1620135408431,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
