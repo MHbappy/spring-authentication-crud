@@ -73,7 +73,7 @@
         <spring-nohttp-checkstyle.version>0.0.4.RELEASE</spring-nohttp-checkstyle.version>
         <git-commit-id-plugin.version>4.0.0</git-commit-id-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
-        <jib-maven-plugin.version>2.4.0</jib-maven-plugin.version>
+        <jib-maven-plugin.version>3.0.0</jib-maven-plugin.version>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
@@ -142,6 +142,13 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-bean-validators</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
@@ -537,28 +544,28 @@
                                 <outputDirectory>${jacoco.utReportFolder}</outputDirectory>
                             </configuration>
                         </execution>
-                        <execution>
-                            <id>pre-integration-tests</id>
-                            <goals>
-                                <goal>prepare-agent-integration</goal>
-                            </goals>
-                            <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
-                                <destFile>${jacoco.itReportFile}</destFile>
-                            </configuration>
-                        </execution>
+<!--                        <execution>-->
+<!--                            <id>pre-integration-tests</id>-->
+<!--                            <goals>-->
+<!--                                <goal>prepare-agent-integration</goal>-->
+<!--                            </goals>-->
+<!--                            <configuration>-->
+<!--                                &lt;!&ndash; Sets the path to the file which contains the execution data. &ndash;&gt;-->
+<!--                                <destFile>${jacoco.itReportFile}</destFile>-->
+<!--                            </configuration>-->
+<!--                        </execution>-->
                         <!-- Ensures that the code coverage report for integration tests is created after integration tests have been run -->
-                        <execution>
-                            <id>post-integration-tests</id>
-                            <phase>post-integration-test</phase>
-                            <goals>
-                                <goal>report-integration</goal>
-                            </goals>
-                            <configuration>
-                                <dataFile>${jacoco.itReportFile}</dataFile>
-                                <outputDirectory>${jacoco.itReportFolder}</outputDirectory>
-                            </configuration>
-                        </execution>
+<!--                        <execution>-->
+<!--                            <id>post-integration-tests</id>-->
+<!--                            <phase>post-integration-test</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>report-integration</goal>-->
+<!--                            </goals>-->
+<!--                            <configuration>-->
+<!--                                <dataFile>${jacoco.itReportFile}</dataFile>-->
+<!--                                <outputDirectory>${jacoco.itReportFolder}</outputDirectory>-->
+<!--                            </configuration>-->
+<!--                        </execution>-->
                     </executions>
                 </plugin>
                 <plugin>
@@ -568,9 +575,21 @@
                     <configuration>
                         <from>
                             <image>adoptopenjdk:11-jre-hotspot</image>
+
                         </from>
                         <to>
-                            <image>reactjsjavacrud:latest</image>
+<!--                        <image>reactjsjavacrud:latest</image>-->
+<!--                        <image>registry.hub.docker.com/mhbappy18/reactjs-java-crud</image>-->
+
+                            <image>docker.io/mhbappy18/reactjs-java-crud:latest</image>
+                            <auth>
+                                <username>mhbappy18</username>
+                                <password>afrizalbappy18</password>
+                            </auth>
+
+                            <tags>
+                                <tag>latest</tag>
+                            </tags>
                         </to>
                         <container>
                             <entrypoint>
@@ -773,20 +792,20 @@
                             <include>**/*IntTest*</include>
                         </includes>
                     </configuration>
-                    <executions>
-                        <execution>
-                            <id>integration-test</id>
-                            <goals>
-                                <goal>integration-test</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>verify</id>
-                            <goals>
-                                <goal>verify</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>integration-test</id>-->
+<!--                            <goals>-->
+<!--                                <goal>integration-test</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                        <execution>-->
+<!--                            <id>verify</id>-->
+<!--                            <goals>-->
+<!--                                <goal>verify</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
                 </plugin>
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
